@@ -217,7 +217,7 @@ class DateHistogramAgg(BucketAgg):
             data['extended_bounds'] = self.extended_bounds
         if self.field:
             data['field'] = self.field
-	if self.format:
+        if self.format:
             data['format'] = self.format
         elif self.key_field:
             data['key_field'] = self.key_field
@@ -441,7 +441,6 @@ class CardinalityAgg(Agg):
     def _serialize(self):
         if not self.field:
             raise RuntimeError("Field is required:%s" % self.order)
-
         data = {}
         data['field'] = self.field
         data['precision_threshold'] = self.precision_threshold
